@@ -1,0 +1,2 @@
+SELECT * FROM clienti WHERE nome = 'Mario';
+SELECT nome, cognome FROM clienti WHERE anno_di_nascita = 1982;
