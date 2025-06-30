@@ -6,4 +6,9 @@ SELECT FROM prodotto WHERE EXTRACT(YEAR FROM data_attivazione) = 2017 AND (in_pr
 SELECT numero_fattura, id_cliente, nome, cognome 
 FROM fatture, clienti 
 WHERE fatture.id_cliente = clienti.numero_cliente
-AND importo < 1000
+AND importo < 1000;
+SELECT numero_fattura, importo, iva, data_fattura, tipologia FROM fatture JOIN fornitori
+ON fatture.numero_fornitore = fornitori.numero_fornitore;
+SELECT EXTRACT(YEAR FROM data_fattura) AS YEAR, COUNT(*) FROM fatture
+WHERE numero_fattura = 20
+GROUP BY EXTRACT(YEAR FROM data_fattura);
